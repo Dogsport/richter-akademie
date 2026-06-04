@@ -1,43 +1,172 @@
-# Judge Interview Notes
+# Richter Akademie
 
-## 1. What is the biggest challenge judges face today when accessing information or learning materials?
+## Overview
 
-No online training possible. No reference videos with aligned results.
+Richter Akademie is a digital learning and certification platform designed for Hundesport (Dog Sport) judges.
 
-## 2. What information is currently hardest to find or access?
+The platform centralizes training materials, educational videos, certification requirements, assessments, and official documentation in one place, allowing judges to continuously improve their knowledge and stay aligned with judging standards.
 
-There are many full competition videos, but judges need short scenarios showing specific faults.
+---
 
-## 3. If a judge misses a meeting or seminar, what important information is usually missed?
+## Problem Statement
 
-If they miss the meeting, they are lost. There is no documentation.
+Currently, judges rely heavily on:
 
-## 4. How do judges currently learn and stay updated?
+* In-person seminars
+* Mentor judges
+* Annual training sessions
+* Scattered documentation
+* Full competition videos without focused learning examples
 
-Through mentor judges and yearly training.
+This makes it difficult to:
 
-## 5. What information should every judge always have access to?
+* Access information on demand
+* Review specific judging scenarios
+* Stay updated with rule changes
+* Verify knowledge retention
+* Provide consistent judging standards
 
-Everything.
+---
 
-## 6. Which topics should require a quiz or assessment, and which should only require reading?
+## Project Goals
 
-Almost everything should have a quiz.
+The Richter Akademie platform aims to:
 
-## 7. How do you currently know whether a judge has understood the information correctly?
+* Provide structured online learning
+* Offer video-based judging examples
+* Deliver assessments and certifications
+* Track judge progress
+* Support multiple languages
+* Create a centralized knowledge base
 
-There are no tests at the moment for judges, except when they want the license. After that, nothing.
+---
 
-## 8. What would make judges use this platform regularly?
+## Core Features
 
-Training and getting information.
+### Learning Dashboard
 
-## 9. If we could only build three features in Version 1, which three would be most important?
+* Personalized learning experience
+* Progress tracking
+* Course recommendations
+* Notifications and updates
 
-- Show a video
-- Show a quiz
-- Language switch
+### Course Library
 
-## 10. What should the ideal platform include?
+* Training modules
+* Video lessons
+* Practical judging examples
+* Rule interpretation guides
 
-Videos, text, pictures, and evaluated results by head judges.# richter-akademie
+### Study Materials
+
+* Official documents
+* Rulebooks
+* Seminar recordings
+* Learning resources
+
+### Assessments & Certification
+
+* Quizzes
+* Knowledge checks
+* Certification pathways
+* Progress evaluation
+
+### Detailed Scenario Analysis
+
+* Video playback
+* Fault identification
+* Head judge commentary
+* Visual evidence breakdown
+* Supporting documentation
+
+### Multi-language Support
+
+* German
+* English
+* Additional languages in future releases
+
+---
+
+## Version 1 Scope
+
+The initial version focuses on:
+
+1. Video-based learning
+2. Quiz and assessment system
+3. Multi-language support
+
+---
+
+## Design System
+
+The project follows a modern learning platform design inspired by:
+
+* Coursera
+* Udemy Business
+* LinkedIn Learning
+* Professional certification portals
+
+Design principles:
+
+* Clear information hierarchy
+* Mobile responsiveness
+* Accessibility
+* Modern card-based interface
+* Focus on educational workflows
+
+---
+
+## Repository Structure
+
+```text
+richter-akademie/
+├── assets/
+├── design/
+├── documentation/
+├── htmls/
+├── research/
+├── meeting-notes/
+└── README.md
+```
+
+---
+
+## Current Status
+
+Phase: Discovery & Prototype Development
+
+Completed:
+
+* Research interviews
+* User flows
+* Information architecture
+* Interactive HTML prototypes
+* Dashboard concept
+* Lesson experience concept
+* Assessment result concept
+
+Next Steps:
+
+* WordPress integration
+* LMS architecture
+* Authentication
+* Course management
+* Assessment engine
+* Certification workflows
+
+---
+
+## Target Users
+
+* Judge candidates
+* Licensed judges
+* Senior judges
+* Head judges
+* Training coordinators
+* Federation administrators
+
+---
+
+## Vision
+
+To become the central digital learning and certification platform for Hundesport judges, providing consistent education, transparent assessment, and continuous professional development.
