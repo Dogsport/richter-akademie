@@ -40,4 +40,4 @@ Training and getting information.
 
 ## 10. What should the ideal platform include?
 
-Videos, text, pictures, and evaluated results by head judges.
+Videos, text, pictures, and evaluated results by head judges.# richter-akademie
