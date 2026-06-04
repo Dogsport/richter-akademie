@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quiz Result - Hundesport Richter Akademie</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f9f9ff",
+                    "on-secondary-fixed": "#1a1b1f",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-surface": "#181c23",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#7c2e00",
+                    "on-secondary-fixed-variant": "#46464b",
+                    "secondary": "#5e5e63",
+                    "primary": "#0058bc",
+                    "tertiary-fixed-dim": "#ffb595",
+                    "on-tertiary-container": "#fffbff",
+                    "on-primary-fixed-variant": "#004493",
+                    "surface-bright": "#f9f9ff",
+                    "tertiary-fixed": "#ffdbcc",
+                    "inverse-surface": "#2d3039",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e0e2ed",
+                    "on-error": "#ffffff",
+                    "outline": "#717786",
+                    "on-secondary-container": "#626267",
+                    "outline-variant": "#c1c6d7",
+                    "surface": "#f9f9ff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#9e3d00",
+                    "on-surface-variant": "#414755",
+                    "on-tertiary-fixed": "#351000",
+                    "surface-dim": "#d8d9e5",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#e3e2e7",
+                    "surface-container-low": "#f1f3fe",
+                    "on-background": "#181c23",
+                    "secondary-container": "#e0dfe4",
+                    "surface-container-high": "#e6e8f3",
+                    "primary-fixed": "#d8e2ff",
+                    "primary-container": "#0070eb",
+                    "surface-tint": "#005bc1",
+                    "surface-container-highest": "#e0e2ed",
+                    "inverse-on-surface": "#eef0fc",
+                    "secondary-fixed-dim": "#c7c6cb",
+                    "tertiary-container": "#c64f00",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#ecedf9",
+                    "inverse-primary": "#adc6ff",
+                    "on-primary-fixed": "#001a41",
+                    "on-primary-container": "#fefcff",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-desktop": "40px",
+                    "container-max": "1200px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "caption": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "caption": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-lg": ["19px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-md": ["17px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .card-shadow {
+            box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.04);
+        }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-16">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Hundesport Richter Akademie</span>
+</div>
+<div class="flex items-center gap-stack-md">
+<nav class="hidden md:flex gap-6 mr-6">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Dashboard</a>
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1" href="#">Course Library</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Certifications</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="p-2 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<img alt="Judge Profile Avatar" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTpvVWyN_hal7dLf8uV1qSmrnFHm6SVydOD5GkR0cSJDfu-yZvJxlKoAXaEPU3b108kiqVAgzLdUAgtwJUVuiYG8IxC2sLXVTKWPBsqif2--F_WdMyDufGO7OyMJd3lHam7waM-sMH_AahaWuxhk4KEodejKkA4yr3IhugZdAvdH_b-IfHW2jUlv1wMjBKgqexQyFpWjuhUI42qCAK8ooZiGF5pL5mhMTp968dq7vch_1oeLk5Xw2_URUPem4RqwIEB6sSsBuJSAX6"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Result Header Section -->
+<section class="lg:col-span-12 flex flex-col items-center text-center mb-stack-lg">
+<div class="w-24 h-24 rounded-full bg-primary-fixed flex items-center justify-center mb-6 relative">
+<!-- Progress Ring (SVG) -->
+<svg class="absolute inset-0 w-full h-full -rotate-90">
+<circle cx="48" cy="48" fill="transparent" r="44" stroke="#D2D2D7" stroke-width="4"></circle>
+<circle cx="48" cy="48" fill="transparent" r="44" stroke="#34C759" stroke-dasharray="276.46" stroke-dashoffset="33.17" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<span class="font-display text-display text-primary">88%</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-2">Passed</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                    Congratulations! You have successfully completed the <span class="font-semibold">IGP Judge Theory Exam: Phase A</span>. Your performance indicates a high level of technical competency.
+                </p>
+</section>
+<!-- Bento Grid Content -->
+<div class="lg:col-span-8 space-y-gutter">
+<!-- Statistics Card -->
+<div class="bg-surface-container-lowest card-shadow rounded-[20px] p-stack-lg">
+<h2 class="font-headline-md text-headline-md mb-6">Score Breakdown</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Correct</span>
+<span class="font-headline-md text-headline-md text-[#34C759]">44</span>
+<span class="font-caption text-caption text-on-surface-variant">Out of 50 Questions</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Wrong</span>
+<span class="font-headline-md text-headline-md text-error">6</span>
+<span class="font-caption text-caption text-on-surface-variant">Incorrectly Answered</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Time</span>
+<span class="font-headline-md text-headline-md text-on-surface">32:14</span>
+<span class="font-caption text-caption text-on-surface-variant">60 Minute Limit</span>
+</div>
+</div>
+</div>
+<!-- Areas to Review -->
+<div class="bg-surface-container-lowest card-shadow rounded-[20px] p-stack-lg">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="menu_book">menu_book</span>
+<h2 class="font-headline-md text-headline-md">Areas to Review</h2>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface hover:bg-surface-container-low transition-colors border border-outline-variant">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="track_changes">track_changes</span>
+</div>
+<div class="flex-grow">
+<h3 class="font-label-md text-label-md font-bold mb-1">Tracking - Handler Positioning</h3>
+<p class="font-body-md text-label-md text-on-surface-variant">Review the regulatory distance requirements for the handler during the first 15 paces of the track.</p>
+</div>
+<button class="text-primary font-label-md hover:underline">Re-read</button>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface hover:bg-surface-container-low transition-colors border border-outline-variant">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="shield">shield</span>
+</div>
+<div class="flex-grow">
+<h3 class="font-label-md text-label-md font-bold mb-1">Protection - Grip Analysis</h3>
+<p class="font-body-md text-label-md text-on-surface-variant">Clarify the point deductions for "calm" vs "restless" grips during the long attack from cover.</p>
+</div>
+<button class="text-primary font-label-md hover:underline">Re-read</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Sidebar & Hero Image -->
+<aside class="lg:col-span-4 space-y-gutter">
+<!-- Visual Decoration Card -->
+<div class="h-48 rounded-[20px] overflow-hidden relative shadow-lg">
+<img alt="Academic Achievement" class="w-full h-full object-cover" data-alt="A professional high-key photograph of a well-groomed German Shepherd dog sitting alertly in a modern, sun-drenched training academy. The background features clean white walls and minimal corporate decor in soft blues and grays. The lighting is soft and ambient, creating a prestigious and authoritative academic atmosphere for professional dog sport judging." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjX9ZrxvECH7-zr-kDmEIE10u-_fm4jOYMrP7XLTYvcPCbub4JBTKfP83Q2AnEOruaDc_vLDGu3aI8ED84ZW2JfhlsPesH9uXg4gIgKVFmh3BdXmdG2RPAZw_Z_6wLyQhw3DVFvcQXUXzia0NpC4gOYwrr8sJ0EFl-VtDw1zeok-uuhs0DBBSC79hCIym6qKfalq0Q-pqodZLpPeTAS39HVr9uiXDtZ_k-Ds6wZVFbUg3c3mL29xw_xo4AD0r0J4-dJN70v8-sWCrT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+<span class="text-white font-label-md">Theory Certification Phase A</span>
+</div>
+</div>
+<!-- Action Card -->
+<div class="bg-primary-container text-on-primary-container rounded-[20px] p-stack-lg flex flex-col gap-6">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Next Steps</h3>
+<p class="font-label-md opacity-90">You are now eligible to begin the practical evaluation session.</p>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<button class="w-full bg-on-primary text-primary font-label-md text-label-md py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-white transition-colors">
+                            Continue Learning
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-[#E5E5EA]/20 border border-white/30 text-white font-label-md text-label-md py-4 rounded-xl font-bold hover:bg-[#E5E5EA]/30 transition-colors">
+                            Review Mistakes
+                        </button>
+</div>
+</div>
+<!-- Certificate Quick Link -->
+<div class="bg-surface-container-lowest card-shadow border border-outline-variant rounded-[20px] p-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-md font-bold">Certificate Issued</span>
+</div>
+<button class="text-primary">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</aside>
+</div>
+</main>
+<!-- Side Navigation Shell (Hidden on Mobile, simplified for this specific screen flow) -->
+<div class="hidden lg:flex fixed left-0 top-0 h-screen flex flex-col p-4 border-r border-outline-variant bg-surface-container-low dark:bg-surface-container-lowest w-20 hover:w-80 transition-all duration-300 group z-40 overflow-hidden" id="side-nav">
+<div class="mb-10 flex items-center gap-4 px-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="school">school</span>
+<span class="font-headline-md text-headline-md font-bold text-primary whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Akademie</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-stack-md text-on-surface-variant hover:bg-secondary-fixed dark:hover:bg-secondary-fixed-dim rounded-lg px-4 py-3 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md opacity-0 group-hover:opacity-100 transition-opacity">Dashboard</span>
+</div>
+<div class="flex items-center gap-stack-md bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-md opacity-0 group-hover:opacity-100 transition-opacity">Course Library</span>
+</div>
+<div class="flex items-center gap-stack-md text-on-surface-variant hover:bg-secondary-fixed dark:hover:bg-secondary-fixed-dim rounded-lg px-4 py-3 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md opacity-0 group-hover:opacity-100 transition-opacity">Study Materials</span>
+</div>
+<div class="flex items-center gap-stack-md text-on-surface-variant hover:bg-secondary-fixed dark:hover:bg-secondary-fixed-dim rounded-lg px-4 py-3 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span class="font-label-md opacity-0 group-hover:opacity-100 transition-opacity">Certifications</span>
+</div>
+</div>
+</div>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+                button.style.transition = 'transform 0.1s ease';
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Simple parallax or hover effect for the hero card
+        const heroCard = document.querySelector('.lg\\:col-span-4 .overflow-hidden');
+        if (heroCard) {
+            heroCard.addEventListener('mousemove', (e) => {
+                const { left, top, width, height } = heroCard.getBoundingClientRect();
+                const x = (e.clientX - left) / width - 0.5;
+                const y = (e.clientY - top) / height - 0.5;
+                heroCard.querySelector('img').style.transform = `scale(1.1) translate(${x * 20}px, ${y * 20}px)`;
+            });
+            heroCard.addEventListener('mouseleave', () => {
+                heroCard.querySelector('img').style.transform = `scale(1) translate(0, 0)`;
+                heroCard.querySelector('img').style.transition = 'transform 0.5s ease-out';
+            });
+        }
+    </script>
+</body></html>

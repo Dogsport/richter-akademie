@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hundesport Richter Akademie - Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9ff;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .content-card {
+            box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .content-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.06);
+        }
+        .step-node::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            width: 2px;
+            height: 32px;
+            background: #D2D2D7;
+            transform: translateX(-50%);
+        }
+        .step-node:last-child::before {
+            display: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#f9f9ff",
+                      "on-secondary-fixed": "#1a1b1f",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#adc6ff",
+                      "on-surface": "#181c23",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#7c2e00",
+                      "on-secondary-fixed-variant": "#46464b",
+                      "secondary": "#5e5e63",
+                      "primary": "#0058bc",
+                      "tertiary-fixed-dim": "#ffb595",
+                      "on-tertiary-container": "#fffbff",
+                      "on-primary-fixed-variant": "#004493",
+                      "surface-bright": "#f9f9ff",
+                      "tertiary-fixed": "#ffdbcc",
+                      "inverse-surface": "#2d3039",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#e0e2ed",
+                      "on-error": "#ffffff",
+                      "outline": "#717786",
+                      "on-secondary-container": "#626267",
+                      "outline-variant": "#c1c6d7",
+                      "surface": "#f9f9ff",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#9e3d00",
+                      "on-surface-variant": "#414755",
+                      "on-tertiary-fixed": "#351000",
+                      "surface-dim": "#d8d9e5",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#e3e2e7",
+                      "surface-container-low": "#f1f3fe",
+                      "on-background": "#181c23",
+                      "secondary-container": "#e0dfe4",
+                      "surface-container-high": "#e6e8f3",
+                      "primary-fixed": "#d8e2ff",
+                      "primary-container": "#0070eb",
+                      "surface-tint": "#005bc1",
+                      "surface-container-highest": "#e0e2ed",
+                      "inverse-on-surface": "#eef0fc",
+                      "secondary-fixed-dim": "#c7c6cb",
+                      "tertiary-container": "#c64f00",
+                      "on-primary": "#ffffff",
+                      "surface-container": "#ecedf9",
+                      "inverse-primary": "#adc6ff",
+                      "on-primary-fixed": "#001a41",
+                      "on-primary-container": "#fefcff",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-desktop": "40px",
+                      "container-max": "1200px",
+                      "stack-md": "16px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "stack-sm": "8px",
+                      "stack-lg": "32px"
+              },
+              "fontFamily": {
+                      "caption": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "display": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "caption": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "body-lg": ["19px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "body-md": ["17px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 h-16 bg-surface z-50 border-b border-outline-variant shadow-sm px-margin-desktop flex justify-between items-center max-w-container-max mx-auto w-full">
+<div class="flex items-center gap-stack-md">
+<span class="font-headline-md text-headline-md font-bold text-primary">Hundesport Richter Akademie</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-[10px] tracking-wider uppercase">Admin Portal</span>
+</div>
+<div class="flex items-center gap-stack-lg">
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Dashboard</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">User Management</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Reports</a>
+</div>
+<div class="flex items-center gap-4 border-l border-outline-variant pl-6">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">notifications</span>
+<img alt="Judge Profile Avatar" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A professional headshot avatar for a dog sport judge, featuring a friendly middle-aged man wearing a professional navy blazer and a clean white shirt. The background is a soft, out-of-focus academy setting with institutional blue and white tones. The lighting is bright and even, conveying authority and accessibility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWjRW-9odRaOZBr-91kliR_MEd5QTReWA6mnbGJvw3xU1KppBtJmeWXcM9tp8Llr-bRm84BbxVkk6FBTlhS615yfCEvPWN3A-se9Pz-JntEAfOW98_W6E8K53gIXoSzHPR05z10Tjg-wXH7n7cVRtq84j7V081_UY7q_EgPDVqT_soWwBPpkkAEDK7-xiCyabhps1W_SW4hDu9hfeUsD-kPt7-M1ydEaZ91h2lJ2bnRYrCsxVuEFrocuar97cycsjvFALjF-pOb5yp"/>
+</div>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-80 bg-surface-container-low border-r border-outline-variant p-4 flex flex-col hidden lg:flex">
+<div class="mb-8">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-4 px-4">ACADEMY HEALTH</h3>
+<div class="space-y-3">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-center mb-1">
+<span class="font-caption text-caption text-on-surface-variant">Total Users</span>
+<span class="text-primary material-symbols-outlined text-sm">groups</span>
+</div>
+<div class="text-headline-md font-bold">1,284</div>
+<div class="flex items-center gap-1 mt-2">
+<span class="text-[#34C759] text-[12px] font-bold">+12%</span>
+<span class="font-caption text-caption text-on-secondary-container">vs last month</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-center mb-1">
+<span class="font-caption text-caption text-on-surface-variant">Pass Rate</span>
+<span class="text-primary material-symbols-outlined text-sm">verified</span>
+</div>
+<div class="text-headline-md font-bold">78.4%</div>
+<div class="w-full h-1 bg-outline-variant rounded-full mt-3 overflow-hidden">
+<div class="h-full bg-[#34C759] w-[78%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-center mb-1">
+<span class="font-caption text-caption text-on-surface-variant">Active Lessons</span>
+<span class="text-primary material-symbols-outlined text-sm">menu_book</span>
+</div>
+<div class="text-headline-md font-bold">42</div>
+<div class="font-caption text-caption text-on-secondary-container mt-2">12 modules in draft</div>
+</div>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-stack-md bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-stack-md text-on-surface-variant hover:bg-secondary-fixed px-4 py-3 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-body-md text-body-md">Course Library</span>
+</a>
+<a class="flex items-center gap-stack-md text-on-surface-variant hover:bg-secondary-fixed px-4 py-3 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-body-md text-body-md">Study Materials</span>
+</a>
+<a class="flex items-center gap-stack-md text-on-surface-variant hover:bg-secondary-fixed px-4 py-3 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">verified</span>
+<span class="font-body-md text-body-md">Certifications</span>
+</a>
+</nav>
+<div class="mt-auto pt-4">
+<button class="w-full bg-primary text-white py-3 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+<span>Resume Learning</span>
+</button>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-1 lg:ml-80 px-margin-mobile md:px-margin-desktop py-stack-lg max-w-5xl mx-auto">
+<header class="mb-8">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md mb-2">
+<span>Course Editor</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span>IGP Regulation</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Richter Learning Flow Builder</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl">Create structured evaluation flows for judge certification. Precision and clarity are mandatory for all certification material.</p>
+</header>
+<!-- Flow Builder Canvas -->
+<div class="relative space-y-12 pb-20">
+<!-- Step 1: Upload Video -->
+<section class="step-node relative flex gap-stack-lg">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center z-10 font-bold">1</div>
+<div class="flex-1 bg-surface-container-lowest border border-outline-variant rounded-[20px] p-stack-lg content-card">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md">Upload Performance Video</h3>
+<p class="font-caption text-caption text-on-surface-variant">Primary video asset for the evaluation exercise</p>
+</div>
+<span class="material-symbols-outlined text-primary">videocam</span>
+</div>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-12 flex flex-col items-center justify-center text-center bg-background hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary mb-4 transition-colors">cloud_upload</span>
+<div class="font-label-md text-label-md text-on-surface">Drop video here or click to browse</div>
+<div class="font-caption text-caption text-on-surface-variant mt-1">Recommended: MP4, 1080p, Max 500MB</div>
+</div>
+</div>
+</section>
+<!-- Step 2: Add Pictures -->
+<section class="step-node relative flex gap-stack-lg">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center z-10 font-bold">2</div>
+<div class="flex-1 bg-surface-container-lowest border border-outline-variant rounded-[20px] p-stack-lg content-card">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md">Phase Breakdown Pictures</h3>
+<p class="font-caption text-caption text-on-surface-variant">Still images for micro-movement analysis</p>
+</div>
+<span class="material-symbols-outlined text-primary">image</span>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="aspect-square bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant cursor-pointer hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+</div>
+<div class="aspect-square bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant cursor-pointer hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+</div>
+<div class="aspect-square bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant cursor-pointer hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 3: Input Head Judge Evaluation -->
+<section class="step-node relative flex gap-stack-lg">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center z-10 font-bold">3</div>
+<div class="flex-1 bg-surface-container-lowest border border-outline-variant rounded-[20px] p-stack-lg content-card">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md">Head Judge Evaluation</h3>
+<p class="font-caption text-caption text-on-surface-variant">The definitive benchmark score for this performance</p>
+</div>
+<span class="material-symbols-outlined text-primary">gavel</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div>
+<label class="font-label-md text-label-md text-on-surface block mb-2">Score (0-100)</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Enter benchmark score" type="number"/>
+</div>
+<div>
+<label class="font-label-md text-label-md text-on-surface block mb-2">Classification</label>
+<select class="w-full bg-white border border-outline-variant rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+<option>Excellent (V)</option>
+<option>Very Good (SG)</option>
+<option>Good (G)</option>
+<option>Satisfactory (B)</option>
+<option>Insufficient (M)</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 4: Add Explanation -->
+<section class="step-node relative flex gap-stack-lg">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center z-10 font-bold">4</div>
+<div class="flex-1 bg-surface-container-lowest border border-outline-variant rounded-[20px] p-stack-lg content-card">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md">Detailed Justification</h3>
+<p class="font-caption text-caption text-on-surface-variant">Explain the reasoning behind the evaluation</p>
+</div>
+<span class="material-symbols-outlined text-primary">edit_note</span>
+</div>
+<textarea class="w-full bg-white border border-outline-variant rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none" placeholder="Write the legal and behavioral justification here..." rows="4"></textarea>
+</div>
+</section>
+<!-- Step 5: Build Quiz -->
+<section class="step-node relative flex gap-stack-lg">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center z-10 font-bold">5</div>
+<div class="flex-1 bg-surface-container-lowest border border-outline-variant rounded-[20px] p-stack-lg content-card">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md">Validation Quiz</h3>
+<p class="font-caption text-caption text-on-surface-variant">Construct questions to test judge's perception</p>
+</div>
+<span class="material-symbols-outlined text-primary">quiz</span>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-background border border-outline-variant rounded-xl relative group">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label-md text-label-md font-bold">Question 1: Multiple Choice</span>
+<button class="text-error text-sm opacity-0 group-hover:opacity-100 transition-opacity">Remove</button>
+</div>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-2 mb-3 outline-none" placeholder="e.g. Which phase showed a lack of concentration?" type="text"/>
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<div class="w-4 h-4 rounded-full border border-primary"></div>
+<input class="flex-1 bg-white border-b border-outline-variant py-1 outline-none" placeholder="Option A" type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-4 h-4 rounded-full border border-outline-variant"></div>
+<input class="flex-1 bg-white border-b border-outline-variant py-1 outline-none" placeholder="Option B" type="text"/>
+</div>
+</div>
+</div>
+<button class="w-full py-3 border-2 border-dashed border-outline-variant rounded-xl text-on-surface-variant font-label-md hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add_circle</span>
+                                Add Question
+                            </button>
+</div>
+</div>
+</section>
+</div>
+<!-- Global Actions -->
+<div class="fixed bottom-8 left-[50%] translate-x-[-50%] lg:left-[calc(50%+160px)] flex gap-4 bg-white/80 backdrop-blur-md p-4 rounded-full border border-outline-variant shadow-lg z-50">
+<button class="px-8 py-3 bg-[#E5E5EA] text-primary rounded-full font-label-md text-label-md hover:bg-secondary-fixed transition-colors">Discard Draft</button>
+<button class="px-8 py-3 bg-primary text-white rounded-full font-label-md text-label-md shadow-md hover:shadow-lg transition-all active:scale-95">Publish Flow</button>
+</div>
+</main>
+</div>
+<script>
+        // Simple micro-interaction for scroll effects
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Simulating node interaction
+        document.querySelectorAll('.content-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const node = card.parentElement.querySelector('.w-12');
+                if(node) node.classList.add('scale-110', 'shadow-lg');
+            });
+            card.addEventListener('mouseleave', () => {
+                const node = card.parentElement.querySelector('.w-12');
+                if(node) node.classList.remove('scale-110', 'shadow-lg');
+            });
+        });
+    </script>
+</body></html>

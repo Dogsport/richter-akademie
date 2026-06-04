@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hundesport Richter Akademie - Learner Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f9f9ff",
+                        "on-secondary-fixed": "#1a1b1f",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-surface": "#181c23",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#7c2e00",
+                        "on-secondary-fixed-variant": "#46464b",
+                        "secondary": "#5e5e63",
+                        "primary": "#0058bc",
+                        "tertiary-fixed-dim": "#ffb595",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#004493",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "inverse-surface": "#2d3039",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e0e2ed",
+                        "on-error": "#ffffff",
+                        "outline": "#717786",
+                        "on-secondary-container": "#626267",
+                        "outline-variant": "#c1c6d7",
+                        "surface": "#f9f9ff",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#9e3d00",
+                        "on-surface-variant": "#414755",
+                        "on-tertiary-fixed": "#351000",
+                        "surface-dim": "#d8d9e5",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e3e2e7",
+                        "surface-container-low": "#f1f3fe",
+                        "on-background": "#181c23",
+                        "secondary-container": "#e0dfe4",
+                        "surface-container-high": "#e6e8f3",
+                        "primary-fixed": "#d8e2ff",
+                        "primary-container": "#0070eb",
+                        "surface-tint": "#005bc1",
+                        "surface-container-highest": "#e0e2ed",
+                        "inverse-on-surface": "#eef0fc",
+                        "secondary-fixed-dim": "#c7c6cb",
+                        "tertiary-container": "#c64f00",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#ecedf9",
+                        "inverse-primary": "#adc6ff",
+                        "on-primary-fixed": "#001a41",
+                        "on-primary-container": "#fefcff",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "40px",
+                        "container-max": "1200px",
+                        "stack-md": "16px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-lg": ["19px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["17px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F5F5F7; /* Overriding with Brand Style Guidance explicitly */
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .apple-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .apple-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.06);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant h-16">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-16">
+<div class="font-headline-md text-headline-md font-bold text-primary">Hundesport Richter Akademie</div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<nav class="flex gap-stack-md">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 transition-opacity opacity-80" href="#">Dashboard</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Course Library</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Certifications</a>
+</nav>
+<div class="flex items-center gap-stack-sm">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Judge Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoS5JdDoLg4cgZsF7m80JZGGf8dXSOXdjbSVNgPU7uSfOUGP4nAOE5UE50wTPoipkbZFNYF5HnfFolObruvaljk75TpLlodVCzVyYiG5HULP1Va0-OWvgi67ZdleNRiLmvk51NtfboS8nk79c1qo20zlRs5lcLeweOqsSBMqKJFhYXPqJPVb7sDbQwbO9w0LFQqfu0kCCkwLu-EIOu1grOlldc6L_Q3WqdYImQTQ3sKEMqlB5UN18dWL3y0WJ_-LafYsKAzLmKr6RQ"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Sidebar Shell (Desktop) -->
+<aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-container-low border-r border-outline-variant hidden lg:flex flex-col p-6">
+<div class="mb-10">
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Hundesport Akademie</h2>
+<p class="text-caption font-caption text-on-surface-variant">Judge Certification Portal</p>
+</div>
+<nav class="flex flex-col gap-stack-sm flex-grow">
+<a class="flex items-center gap-stack-md bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-stack-md text-on-surface-variant hover:bg-secondary-fixed transition-all px-4 py-3" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-body-md text-body-md">Course Library</span>
+</a>
+<a class="flex items-center gap-stack-md text-on-surface-variant hover:bg-secondary-fixed transition-all px-4 py-3" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-body-md text-body-md">Study Materials</span>
+</a>
+<a class="flex items-center gap-stack-md text-on-surface-variant hover:bg-secondary-fixed transition-all px-4 py-3" href="#">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span class="font-body-md text-body-md">Certifications</span>
+</a>
+<a class="flex items-center gap-stack-md text-on-surface-variant hover:bg-secondary-fixed transition-all px-4 py-3" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</nav>
+<button class="mt-auto bg-primary text-on-primary font-label-md text-label-md py-4 px-6 rounded-xl hover:opacity-90 transition-opacity">
+            Resume Learning
+        </button>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-12 lg:pl-80 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<!-- Hero: Continue Learning -->
+<section class="mb-stack-lg">
+<div class="apple-card relative overflow-hidden h-[320px] group">
+<img class="absolute inset-0 w-full h-full object-cover brightness-50 group-hover:scale-105 transition-transform duration-700" data-alt="A focused German Shepherd dog performing a high-jump during an agility trial. The dog is in mid-air with intense concentration, set against a blurred green field at dusk. The lighting is warm and dramatic, highlighting the muscular definition of the animal. The overall atmosphere is professional, cinematic, and aligned with a premium academic dog sport environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl8ivSSwKopk-K3lC00n0xpxhDxi2q02oMMfanVKpaKTDeXvrhi36KQyRzhk3dBUpEWtkYKkoguo7uz4TTQ__7jpi3cHHkmt4qN-gXpZXZY9ibXyIaoK5oIwrQcQUew6K3Joz-Q-IsREMBKfTzWLSppNVZfrSKAHhXZD5-ipI8U_FHCu--iU5bV6a4MGhz2gN2XLrs4SYL7nTurUYld4fWLemB-y4X-C9hzChtOmFzw2DaIW2EvPhLF7TeNykp29--Rm6oS3EDvwdg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-stack-lg flex flex-col justify-end">
+<div class="flex items-center gap-stack-sm mb-2">
+<span class="bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">In Progress</span>
+<span class="text-white/80 font-label-md text-label-md">Module 4: Advanced Trial Judging</span>
+</div>
+<h1 class="font-display text-display text-white mb-4">Precision in Obedience Scoring</h1>
+<div class="flex items-center gap-6">
+<button class="bg-[#007AFF] text-white font-label-md text-label-md px-8 py-3 rounded-full flex items-center gap-2 hover:bg-blue-600 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                                Continue Lesson
+                            </button>
+<div class="flex-grow max-w-xs bg-white/20 h-1 rounded-full overflow-hidden">
+<div class="bg-[#34C759] h-full w-[65%]"></div>
+</div>
+<span class="text-white font-label-md text-label-md">65%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Topics and Progress -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<!-- Recently Added Topics -->
+<div>
+<div class="flex justify-between items-center mb-stack-md">
+<h2 class="font-headline-md text-headline-md">Recently Added Topics</h2>
+<button class="text-primary font-label-md text-label-md hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<!-- Card 1: Protection -->
+<div class="apple-card p-4 flex flex-col h-full">
+<div class="h-32 rounded-xl bg-surface-container-high mb-4 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional close-up of a Malinois dog focused intently on a training sleeve. The scene is shot in a clean, brightly lit indoor training facility with a neutral color palette. The lighting is soft and even, highlighting the textures of the dog's coat and the training equipment. The image conveys a sense of discipline and advanced skill training in a modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfssxfg9jJTl2lnT2a9YGpU-fParxfTo4ezDNlZ4j9Q_Ifl5Zf8D8wrUyMzOVGaCnsuO-myi-qnQMYUz6acDbWNYdSwXSu2CxoiyZPlnkc4O_XUxbPlf2rYZNVgE8p0T2ByKkkQIVWsPqgHiqrUpQrJ1DxWdUvPtVPA08fPcaRr8rkx0yAQeof73evA22o2pmSAqtpGk7sEZf-w-dHji_PUXf-4EQsw-6beeQ0mmjPUnfdrvEQw1ax9aJME0za7UmfA3b9FkKsmJCO"/>
+</div>
+<span class="text-caption font-caption text-primary mb-1">New Curriculum</span>
+<h3 class="font-label-md text-label-md font-bold mb-2">Protection Mechanics</h3>
+<p class="text-caption font-caption text-on-surface-variant flex-grow">Advanced analysis of grip stability and environmental drive.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-caption font-caption text-on-surface-variant">12 Lessons</span>
+<button class="p-2 rounded-full hover:bg-surface-container-low text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Obedience -->
+<div class="apple-card p-4 flex flex-col h-full">
+<div class="h-32 rounded-xl bg-surface-container-high mb-4 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A Golden Retriever sitting in a perfect 'stay' position on a pristine hardwood floor within a minimalist, high-end training academy. The background is slightly out of focus, showing clean white walls and large windows with soft daylight streaming in. The image has a calm, professional aesthetic, emphasizing focus and precision in obedience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVkSnvoMvoLJ7pA34VJJaX5ynvgC2_L7s6c2KsK-Az9mtvygdM9hg_HaKQkBXkD8U6YpTfL56-OVj1tEY0ABF8lnBk9_02D3zEuUsqEVRcFqyRl3PYqYzz6VBybfV4HIc88WFbqUmBT_5lUgXFBO-oU5Fa1Um5T2e1woZvdWpChmH0vYLJ4S_Szp3hFXGuf66sZ7aOtRMh04b08fqvgd9xv2dkYRa1vGYKs6vX8U7P_lzWBg-_x5oJrDYQzp37ROlHklgJ9qZAknz_"/>
+</div>
+<span class="text-caption font-caption text-tertiary mb-1">Judge Seminar</span>
+<h3 class="font-label-md text-label-md font-bold mb-2">Obedience Refinement</h3>
+<p class="text-caption font-caption text-on-surface-variant flex-grow">Developing a keen eye for heel-work transitions and focal points.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-caption font-caption text-on-surface-variant">8 Lessons</span>
+<button class="p-2 rounded-full hover:bg-surface-container-low text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Tracking -->
+<div class="apple-card p-4 flex flex-col h-full">
+<div class="h-32 rounded-xl bg-surface-container-high mb-4 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-angle shot of a tracking dog following a scent trail across a dew-covered grass field at early dawn. The atmosphere is misty and serene, with cool blue and soft grey tones. The dog is focused, nose to the ground, wearing a professional leather harness. The style is sophisticated and evocative of quiet expertise in dog sports." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZjCDIbzswL0gisQPG0leqkss3RuuniLngckuUVFnUFHNq3ju3Kqq5oPsEDCSaALb9oeId95uTMs7TPj2VyqHy-xl-VnwwmQI27xn_2xn1acIuZWqvtjH1-EbedHAbpwvj8tOc2elGskg8glQrNpjkisTuv4xHyUqJCIyQ0hKYmlo1Bmv-mZ4pc8MxcTvpLqUNur3Qa6Q86Kzw863PNh7VWLE-icHB-ePg8lpQ3uveQoBDbSv4843bas_H9p7HK8DNbnn5zsh9Iah3"/>
+</div>
+<span class="text-caption font-caption text-on-secondary-fixed-variant mb-1">Field Study</span>
+<h3 class="font-label-md text-label-md font-bold mb-2">Tracking Fundamentals</h3>
+<p class="text-caption font-caption text-on-surface-variant flex-grow">Identifying minor variances in article indication and track pacing.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-caption font-caption text-on-surface-variant">15 Lessons</span>
+<button class="p-2 rounded-full hover:bg-surface-container-low text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Overall Progress (Bento Section) -->
+<div class="apple-card p-stack-lg">
+<div class="flex flex-col md:flex-row gap-stack-lg">
+<div class="flex-grow">
+<h2 class="font-headline-md text-headline-md mb-2">Overall Progress</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">You are in the top 5% of certification candidates this semester. Keep the momentum!</p>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md">Theory Modules</span>
+<span class="font-label-md text-label-md text-primary">82%</span>
+</div>
+<div class="w-full bg-[#E5E5EA] h-2 rounded-full overflow-hidden">
+<div class="bg-[#007AFF] h-full w-[82%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md">Practical Simulations</span>
+<span class="font-label-md text-label-md text-primary">45%</span>
+</div>
+<div class="w-full bg-[#E5E5EA] h-2 rounded-full overflow-hidden">
+<div class="bg-[#007AFF] h-full w-[45%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-shrink-0 flex items-center justify-center p-4">
+<div class="relative w-40 h-40">
+<svg class="w-full h-full transform -rotate-90">
+<circle cx="80" cy="80" fill="transparent" r="70" stroke="#E5E5EA" stroke-width="8"></circle>
+<circle cx="80" cy="80" fill="transparent" r="70" stroke="#34C759" stroke-dasharray="440" stroke-dashoffset="132" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-display text-display text-on-surface">70%</span>
+<span class="text-caption font-caption text-on-surface-variant">Completed</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar content -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<!-- Upcoming Assessments -->
+<div class="apple-card p-stack-lg">
+<h2 class="font-headline-md text-headline-md mb-stack-md">Upcoming Assessments</h2>
+<div class="space-y-stack-md">
+<div class="flex gap-stack-md items-start p-4 bg-surface-container-low rounded-xl">
+<div class="w-12 h-12 bg-white rounded-lg flex flex-col items-center justify-center border border-outline-variant shrink-0">
+<span class="text-[10px] font-bold text-error uppercase">Oct</span>
+<span class="text-lg font-bold">14</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold">Written Ethics Exam</h4>
+<p class="text-caption font-caption text-on-surface-variant">Digital Proctoring Required</p>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="text-[12px] font-medium">09:00 AM</span>
+</div>
+</div>
+</div>
+<div class="flex gap-stack-md items-start p-4 bg-surface-container-low rounded-xl">
+<div class="w-12 h-12 bg-white rounded-lg flex flex-col items-center justify-center border border-outline-variant shrink-0">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Oct</span>
+<span class="text-lg font-bold">22</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold">Practical Field Judging</h4>
+<p class="text-caption font-caption text-on-surface-variant">Bonn Regional Training Center</p>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span class="text-[12px] font-medium">Site Visit</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-stack-md py-3 border border-outline-variant rounded-xl text-primary font-label-md text-label-md hover:bg-surface-container-low transition-colors">
+                            Schedule New Test
+                        </button>
+</div>
+<!-- Recent Notifications -->
+<div class="apple-card p-stack-lg flex-grow">
+<h2 class="font-headline-md text-headline-md mb-stack-md">Recent Notifications</h2>
+<div class="space-y-4">
+<div class="flex gap-stack-md">
+<div class="w-2 h-2 mt-2 rounded-full bg-primary shrink-0"></div>
+<div>
+<p class="text-label-md font-label-md font-medium">Course Updated</p>
+<p class="text-caption font-caption text-on-surface-variant">New scoring guidelines for IGP 3 added to library.</p>
+<span class="text-[11px] text-on-secondary-container mt-1 block">2 hours ago</span>
+</div>
+</div>
+<div class="flex gap-stack-md">
+<div class="w-2 h-2 mt-2 rounded-full bg-transparent shrink-0"></div>
+<div>
+<p class="text-label-md font-label-md font-medium">Certificate Issued</p>
+<p class="text-caption font-caption text-on-surface-variant">Congratulation! You've earned the 'Level 1 Tracker' badge.</p>
+<span class="text-[11px] text-on-secondary-container mt-1 block">Yesterday</span>
+</div>
+</div>
+<div class="flex gap-stack-md">
+<div class="w-2 h-2 mt-2 rounded-full bg-transparent shrink-0"></div>
+<div>
+<p class="text-label-md font-label-md font-medium">Feedback Received</p>
+<p class="text-caption font-caption text-on-surface-variant">Instructor Richter commented on your Tracking submission.</p>
+<span class="text-[11px] text-on-secondary-container mt-1 block">2 days ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Navigation (BottomNavBar) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface/90 backdrop-blur-lg border-t border-outline-variant h-16 flex items-center justify-around px-4 z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-bold">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-medium">Courses</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">verified</span>
+<span class="text-[10px] font-medium">Certs</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for circular progress
+        window.addEventListener('load', () => {
+            const circles = document.querySelectorAll('circle[stroke-dashoffset]');
+            circles.forEach(circle => {
+                circle.style.transition = 'stroke-dashoffset 1s ease-out';
+            });
+        });
+    </script>
+</body></html>
