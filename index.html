@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hundesport Richter Akademie - Prototype Showcase</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Inter, Arial, sans-serif;
+    background:#f5f7fb;
+    color:#181c23;
+    padding:60px 24px;
+}
+
+.container{
+    max-width:1200px;
+    margin:0 auto;
+}
+
+h1{
+    font-size:42px;
+    color:#0058bc;
+    margin-bottom:12px;
+}
+
+.subtitle{
+    color:#667085;
+    font-size:18px;
+    margin-bottom:50px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:24px;
+}
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    padding:28px;
+    box-shadow:0 4px 20px rgba(0,0,0,.05);
+    transition:all .25s ease;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.card h2{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#667085;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    background:#0058bc;
+    color:white;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:12px;
+    font-weight:600;
+}
+
+.btn:hover{
+    background:#00479a;
+}
+
+.footer{
+    margin-top:60px;
+    color:#98a2b3;
+    text-align:center;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Hundesport Richter Akademie</h1>
+
+    <p class="subtitle">
+        Interactive prototype showcase for the digital judge learning and certification platform.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <h2>Dashboard</h2>
+            <p>Main learning dashboard with progress tracking, courses, assessments and notifications.</p>
+            <a class="btn" href="docs/dashboard.html">Open Prototype</a>
+        </div>
+
+        <div class="card">
+            <h2>Course Builder</h2>
+            <p>Content management and course creation experience for administrators and trainers.</p>
+            <a class="btn" href="docs/content-builder.html">Open Prototype</a>
+        </div>
+
+        <div class="card">
+            <h2>Lesson Analysis</h2>
+            <p>Detailed judging analysis with video review, faults and supporting evidence.</p>
+            <a class="btn" href="docs/detailed-analysis.html">Open Prototype</a>
+        </div>
+
+        <div class="card">
+            <h2>Focus Mode</h2>
+            <p>Distraction-free learning experience designed for course consumption.</p>
+            <a class="btn" href="docs/focus.mode.html">Open Prototype</a>
+        </div>
+
+        <div class="card">
+            <h2>Judge Progress</h2>
+            <p>Certification progress, achievements and learning journey tracking.</p>
+            <a class="btn" href="docs/judge-progress.html">Open Prototype</a>
+        </div>
+
+        <div class="card">
+            <h2>Assessment Results</h2>
+            <p>Quiz results, evaluation scoring and certification outcomes.</p>
+            <a class="btn" href="docs/assesmentresults.html">Open Prototype</a>
+        </div>
+
+        <div class="card">
+            <h2>Platform Updates</h2>
+            <p>News, announcements and updates for judges and administrators.</p>
+            <a class="btn" href="docs/updates.html">Open Prototype</a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Richter Akademie • Interactive Product Prototype
+    </div>
+
+</div>
+
+</body>
+</html>
